@@ -18,12 +18,3 @@ Route::any('/insereEscola', 'LocalVotacaoController@insereEscola')->name('insere
 Route::get('/', 'HomeController@index');
 Route::post('/buscaLocal', 'LocalVotacaoController@verifica')->name('buscaLocal');
 Route::get('/resultado', 'LocalVotacaoController@resultado')->name('resultado');
-
-Auth::routes([
-    ]);
-
-
-    Route::middleware(['auth'])->group(function () {
-        Route::get('admin/posts/create', function () {});
-        Route::get('admin/user/profile', function () {});
-    });
