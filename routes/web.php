@@ -10,18 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::middleware(['auth'])->group(function () {
+    Route::any('/cadastra', 'LocalVotacaoController@cadastra')->name('cadastra');
+    Route::any('/insereLocal', 'LocalVotacaoController@insereLocal')->name('insereLocal');
+    Route::any('/insereEscola', 'LocalVotacaoController@insereEscola')->name('insereEscola');
 
-Route::get('/', function () {
-    return view('welcome');
 });
 
-Auth::routes([
-    Route::any('/cadastra', 'LocalVotacaoController@cadastra')->name('cadastra'),
-    Route::any('/insereLocal', 'LocalVotacaoController@insereLocal')->name('insereLocal'),
-    Route::any('/insereEscola', 'LocalVotacaoController@insereEscola')->name('insereEscola'),
-    ]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('/');
 Route::post('/buscaLocal', 'LocalVotacaoController@verifica')->name('buscaLocal');
 Route::get('/resultado', 'LocalVotacaoController@resultado')->name('resultado');
 
