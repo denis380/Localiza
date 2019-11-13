@@ -10,16 +10,20 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::middleware(['auth'])->group(function () {
-    Route::any('/cadastra', 'LocalVotacaoController@cadastra')->name('cadastra');
-    Route::any('/insereLocal', 'LocalVotacaoController@insereLocal')->name('insereLocal');
-    Route::any('/insereEscola', 'LocalVotacaoController@insereEscola')->name('insereEscola');
 
-});
+Route::any('/cadastra', 'LocalVotacaoController@cadastra')->name('cadastra');
+Route::any('/insereLocal', 'LocalVotacaoController@insereLocal')->name('insereLocal');
+Route::any('/insereEscola', 'LocalVotacaoController@insereEscola')->name('insereEscola');
 
-
-Route::get('/', 'HomeController@index')->name('/');
+Route::get('/', 'HomeController@index');
 Route::post('/buscaLocal', 'LocalVotacaoController@verifica')->name('buscaLocal');
 Route::get('/resultado', 'LocalVotacaoController@resultado')->name('resultado');
 
+Auth::routes([
+    ]);
 
+
+    Route::middleware(['auth'])->group(function () {
+        Route::get('admin/posts/create', function () {});
+        Route::get('admin/user/profile', function () {});
+    });
