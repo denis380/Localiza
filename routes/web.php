@@ -18,3 +18,5 @@ Route::any('/insereEscola', 'LocalVotacaoController@insereEscola')->name('insere
 Route::get('/', 'HomeController@index');
 Route::post('/buscaLocal', 'LocalVotacaoController@verifica')->name('buscaLocal');
 Route::get('/resultado', 'LocalVotacaoController@resultado')->name('resultado');
+Route::get('/info', 'LocalVotacaoController@info')->name('info');
+Route::get('/localCorrespondente/{idLocal}', 'LocalVotacaoController@localCorrespondente')->name('localCorrespontende');
