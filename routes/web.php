@@ -14,6 +14,7 @@
 Route::any('/cadastra', 'LocalVotacaoController@cadastra')->name('cadastra');
 Route::any('/insereLocal', 'LocalVotacaoController@insereLocal')->name('insereLocal');
 Route::any('/insereEscola', 'LocalVotacaoController@insereEscola')->name('insereEscola');
+Route::any('/tabela', 'LocalVotacaoController@tabela')->name('tabela');
 
 Route::get('/', 'HomeController@index');
 Route::post('/buscaLocal', 'LocalVotacaoController@verifica')->name('buscaLocal');

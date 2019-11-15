@@ -46,21 +46,20 @@ class LocalVotacaoController extends Controller
         $local->zona = $request->edtZona;
 
         $local->save();
-
-        return view('cadastro');
+        $st = 'nome: ' . $local->nome . " // id: " . $local->id;
+        return redirect('/cadastra')->with('st', $st);
 
     }
 
     function insereEscola(Request $request){
         $escola = new Escola;
-
         $escola->nome = $request->edtNome;
         $escola->zona = $request->edtZona;
         $escola->idLocal = $request->edtIdLocal;
 
         $escola->save();
-
-        return view('cadastro');
+        $st = 'nome: ' . $escola->nome . " // id: " . $escola->id;
+        return redirect('/cadastra')->with('st', $st);
     }
 
     function localCorrespondente($idLocal){
@@ -70,5 +69,11 @@ class LocalVotacaoController extends Controller
 
     function info(){
         return view('info');
+    }
+
+    function tabela(){
+        $escolas = Escola::get()->all();
+        $locais = LocalVotacao::get()->all();
+        return view('tabela', compact('escolas', 'locais'));
     }
 }

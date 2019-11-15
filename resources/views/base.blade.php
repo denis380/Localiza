@@ -42,7 +42,7 @@
                                 Conto com seu apoio !</p>
                         <p style='padding-top:1%'>
                             <hr>
-                            Você pode digitar o nome da escola onde vota para eleições ordinárias e descobrir onde será seu local de voração para o concelho tutelar...
+                            Você pode digitar o nome da escola onde vota para eleições ordinárias e descobrir onde será seu local de voração para o conselho tutelar...
                         </p>
                         <img src="{{ asset('img/arrow-down.png') }}" alt="">
                     </div>

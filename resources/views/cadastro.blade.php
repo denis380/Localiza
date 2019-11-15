@@ -18,4 +18,9 @@
         <button type="submit">Cadastrar</button>
     </form>
 
+    @if(session()->has('st'))
+    <div class="container alert alert-success">
+        {{ session()->get('st') }}
+    </div>
+@endif 
 @endsection
