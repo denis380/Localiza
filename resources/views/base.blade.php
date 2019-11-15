@@ -4,7 +4,19 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Localiza Votação.</title>
+    <style>
+        @media screen and (max-width: 600px) {
+        .sumir{
+            display: none;
+        }
+        }
 
+        @media screen and (min-width: 600px) {
+            .aparecer{
+                display: none;
+            }
+        }
+    </style>
     <!-- Principal CSS do Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/base.css') }}">
