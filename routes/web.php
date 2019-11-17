@@ -21,3 +21,5 @@ Route::post('/buscaLocal', 'LocalVotacaoController@verifica')->name('buscaLocal'
 Route::get('/resultado', 'LocalVotacaoController@resultado')->name('resultado');
 Route::get('/info', 'LocalVotacaoController@info')->name('info');
 Route::get('/localCorrespondente/{idLocal}', 'LocalVotacaoController@localCorrespondente')->name('localCorrespontende');
+Route::get('/deletaEscola/{idEscola}', 'LocalVotacaoController@deletaEscola')->name('deletaEscola');
+Route::get('/deletaLocal/{idLocal}', 'LocalVotacaoController@deletaLocal')->name('deletaLocal');

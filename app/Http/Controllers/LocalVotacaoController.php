@@ -76,4 +76,15 @@ class LocalVotacaoController extends Controller
         $locais = LocalVotacao::get()->all();
         return view('tabela', compact('escolas', 'locais'));
     }
+
+    function deletaEscola($idEscola){
+        $escola = Escola::findOrFail($idEscola);
+        $escola->delete();
+        return back();
+    }
+    function deletaLocal($idLocal){
+        $local = LocalVotacao::findOrFail($idLocal);
+        $local->delete();
+        return back();
+    }
 }
