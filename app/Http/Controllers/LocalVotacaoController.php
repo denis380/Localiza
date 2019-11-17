@@ -13,9 +13,9 @@ class LocalVotacaoController extends Controller
         if(isset($request->edtNomeEscola)){
 
             $data = $request->edtNomeEscola;
-            $escolas = Escola::select('idLocal', 'nome')
-                ->where('nome', 'like', '%' . $data .'%')
-                ->get();
+             $escolas = Escola::select('idLocal', 'nome')
+                 ->where('nome', 'ilike', '%' . $data .'%')
+                 ->get();
             $resultado = $escolas;
             return view ('resultado', compact('resultado'));
 
@@ -23,7 +23,7 @@ class LocalVotacaoController extends Controller
         }elseif(isset($request->edtZona)){
             $data = $request->edtZona;
             $escolas = Escola::select('idLocal', 'nome')
-            ->where('zona', 'like', '%' . $data .'%')
+            ->where('zona', 'ilike', '%' . $data .'%')
             ->get();
             $resultado = $escolas;
             return view ('resultado', compact('resultado'));
